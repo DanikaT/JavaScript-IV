@@ -81,18 +81,18 @@ class Person{
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.language = attributes.language;
-        this.favSubjects = attributes.favSubjects
+        this.favSubjects = attributes.favSubjects;
     }
     listsSubjects() {
-        this.favSubjects.map(item => console.log(item));;
+        this.favSubjects.map(item => console.log(item));
     }
 
     PRAssignment(subject) {
-        return `${student.name} has submitted a PR for ${subject}.`;
+        return `${this.name} has submitted a PR for ${subject}.`;
     }
 
     sprintChallenge(){
-        return `${student.name} has begun sprint challenge on ${subject}.`;
+        return `${this.name} has begun sprint challenge on ${subject}.`;
     }
 
 }
@@ -115,21 +115,21 @@ class Person{
           this.favInstructor = attributes.favInstructor;
           this.gradClassName = attributes.gradClassName;
       }
-      standUo(channel) {
-        return `${student.name} announces to ${channel}. @channel standy times!`;
+      standUp(channel) {
+        return `${this.name} announces to ${channel}. @channel standy times!`;
     }
 
     debugsCode(){
-        return `${this.name} debugs ${student.name}'s code on ${subject}.`;
+        return `${this.name} debugs ${Student.name}'s code on ${subject}.`;
     }
   }
 
   const Johnny = new Student ({
       name: "Johnny",
-      location: "UK",
+      location: "the UK.",
       age: 32,
       gender: "male",
-      favsubjects: ["CSS", "Javascript"],
+      favSubjects: ["CSS", "Javascript"],
       previousBackground: "marketing",
       className: "WEBEU2",
       language: "English",
@@ -156,3 +156,13 @@ const Alex = new ProjectManager ({
     favInstructor: "Gabe",
     gradClassName: "WEBEU1"
 });
+
+console.log(Johnny.speak());
+console.log(Johnny.listsSubjects());
+console.log(Johnny.PRAssignment("CSS"));
+//console.log(Johnny.sprintChallenge("Javascript"));
+
+console.log(Alex.standUp("Sprint 3"));
+
+
+
