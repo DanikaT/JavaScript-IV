@@ -116,11 +116,11 @@ class Person{
           this.gradClassName = attributes.gradClassName;
       }
       standUp(channel) {
-        return `${this.name} announces to ${channel}. @channel standy times!`;
+        return `${this.name} announces to ${channel}. @channel it's standup time!`;
     }
 
-    debugsCode(){
-        return `${this.name} debugs ${Student.name}'s code on ${subject}.`;
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}.`;
     }
   }
 
@@ -163,6 +163,7 @@ console.log(Johnny.PRAssignment("CSS"));
 //console.log(Johnny.sprintChallenge("Javascript"));
 
 console.log(Alex.standUp("Sprint 3"));
+console.log(Alex.debugsCode(Johnny, "HTML"));
 
 
 
