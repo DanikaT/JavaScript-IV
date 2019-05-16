@@ -7,6 +7,7 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
+/*
 function GameObject(attributes){
     this.createdAt = attributes.createdAt;
     this.name = attributes.name;
@@ -16,7 +17,22 @@ function GameObject(attributes){
   GameObject.prototype.destroy = function() {
     return `${this.name} was removed from the game.`;
   }
+ */
 
+ class GameObject{
+     constructor(attributes) {
+         this.createdAt = attributes.createdAt;
+         this.name = attributes.name;
+         this.dimensions = attributes.dimensions;
+     }
+
+     destroy() {
+         return `${this.name} was removed from the game.`;
+     }
+ }
+
+
+/*
   function CharacterStats(childAttributes){
     GameObject.call(this, childAttributes);
     this.healthPoints = childAttributes.healthPoints;
@@ -25,7 +41,19 @@ function GameObject(attributes){
       } 
     
   }
+  */
 
+  class CharacterStats extends GameObject {
+      constructor(attributes) {
+          super(attributes);
+          this.healthPoints = attributes.healthPoints;
+      }
+
+      takeDamage() {
+          return `${this.name} took damage.`;
+      }
+  }
+/*
   function Humanoid(grandChildAttributes){
     CharacterStats.call(this, grandChildAttributes);
     this.team = grandChildAttributes.team;
@@ -37,8 +65,21 @@ function GameObject(attributes){
   Humanoid.prototype.greet = function(){
     return `${this.name} says hello in ${this.language}`;
   }
+  */
+class Humanoid extends CharacterStats {
+    constructor(attributes) {
+        super(attributes);
+        this.team = attributes.team;
+        this.weapons = attributes.weapons;
+        this.language = attributes.language;
+    }
+    greet() {
+        return `${this.name} says hello in ${this.language}`;
+    }
+}
 
-  /*
+
+  
 
   const mage = new Humanoid({
     createdAt: new Date(),
@@ -100,4 +141,3 @@ function GameObject(attributes){
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-*/
