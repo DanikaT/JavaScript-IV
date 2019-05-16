@@ -29,7 +29,7 @@ class Person{
 
     speak() {
         return `Hello my name is ${this.name}, I am from ${this.location}`;
-    }
+    }   
 }
 
 /*
@@ -123,3 +123,36 @@ class Person{
         return `${this.name} debugs ${student.name}'s code on ${subject}.`;
     }
   }
+
+  const Johnny = new Student ({
+      name: "Johnny",
+      location: "UK",
+      age: 32,
+      gender: "male",
+      favsubjects: ["CSS", "Javascript"],
+      previousBackground: "marketing",
+      className: "WEBEU2",
+      language: "English",
+  });
+
+  const Gabriel = new Instructor ({
+    name: "Gabriel",
+    location: "Spain",
+    age: 32,
+    gender: "male",
+    speciality: "coding wizardry",
+    Favlanguage: "All",
+    catchPhrase: "Use the shortcut keyssss!"
+});
+
+const Alex = new ProjectManager ({
+    name: "Alex",
+    location: "London",
+    age: 32,
+    gender: "male",
+    speciality: "coding wizardry",
+    Favlanguage: "All",
+    catchPhrase: "Here's where the magic happens!!",
+    favInstructor: "Gabe",
+    gradClassName: "WEBEU1"
+});
