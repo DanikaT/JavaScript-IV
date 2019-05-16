@@ -49,8 +49,8 @@ class Person{
     constructor(attributes) {
         super(attributes);
         this.speciality = attributes.speciality;
-        this.favLanguage = attributes.speciality;
-        this.catchPhrase = attributes.speciality;
+        this.favLanguage = attributes.favLanguage;
+        this.catchPhrase = attributes.catchPhrase;
         
     }
 
@@ -91,7 +91,7 @@ class Person{
         return `${this.name} has submitted a PR for ${subject}.`;
     }
 
-    sprintChallenge(){
+    sprintChallenge(subject){
         return `${this.name} has begun sprint challenge on ${subject}.`;
     }
 
@@ -141,7 +141,7 @@ class Person{
     age: 32,
     gender: "male",
     speciality: "coding wizardry",
-    Favlanguage: "All",
+    favLanguage: "All",
     catchPhrase: "Use the shortcut keyssss!"
 });
 
@@ -150,7 +150,7 @@ const Alex = new ProjectManager ({
     location: "London",
     age: 32,
     gender: "male",
-    speciality: "coding wizardry",
+    speciality: "teaching",
     Favlanguage: "All",
     catchPhrase: "Here's where the magic happens!!",
     favInstructor: "Gabe",
@@ -160,10 +160,27 @@ const Alex = new ProjectManager ({
 console.log(Johnny.speak());
 console.log(Johnny.listsSubjects());
 console.log(Johnny.PRAssignment("CSS"));
-//console.log(Johnny.sprintChallenge("Javascript"));
+console.log(Johnny.sprintChallenge("Javascript"));
+console.log(Johnny.speak());
 
 console.log(Alex.standUp("Sprint 3"));
 console.log(Alex.debugsCode(Johnny, "HTML"));
+console.log(Alex.speak());
+console.log(Alex.gradClassName);
+console.log(Alex.catchPhrase);
+console.log(Alex.speciality);
+
+console.log(Gabriel.demo("Git"));
+console.log(Gabriel.grade(Johnny, "Applied CSS"));
+console.log(Gabriel.speak());
+console.log(Gabriel.location);
+console.log(Gabriel.favLanguage);
+console.log(Gabriel.catchPhrase);
+console.log(Gabriel.speciality);
+
+
+
+
 
 
 
